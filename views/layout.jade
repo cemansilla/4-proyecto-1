@@ -1,0 +1,20 @@
+doctype html
+html(lang="es")
+    head
+        title Proyecto 1
+        meta(charset="utf-8")
+        link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
+        link(href="/public/css/app.css", rel="stylesheet")
+        script(src="/socket.io/socket.io.js", type="text/javascript")
+    body
+        nav(class="large-padding black white-text")
+            ul
+                li 
+                    a(href="/app") Inicio
+                li 
+                    a(href="/app/imagenes/new") Subir imagen
+                li 
+                    a(href="/app/imagenes") Mis imágenes
+        // Esto es lo que se va a reemplazar
+        // Tengo que definir un bloque contenido en las vistas que implementen este layout
+        block contenido

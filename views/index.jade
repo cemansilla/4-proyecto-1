@@ -1,0 +1,9 @@
+// De esta forma incluyo otra vista
+extends ./layout.jade
+
+// Acá defino el bloque que espera el layout
+block contenido
+    div(class="col-md-8 remove-float center-block text-center big-top-space")
+        h1 Bienvenidos!
+        a(href="./login", class="right-space") Iniciar sesión
+        a(href="./signup", class="right-space") Registro

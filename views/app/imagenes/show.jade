@@ -1,0 +1,10 @@
+// De esta forma incluyo otra vista
+extends ../../layout.jade
+
+// Acá defino el bloque que espera el layout
+block contenido
+    div(class="img-container")
+        h1 #{imagen.title}
+        img(src="/public/imagenes/#{imagen._id}.#{imagen.extension}", class="main-img")
+        if(typeof imagen.creator != "undefined")
+            p Por #{imagen.creator.email}

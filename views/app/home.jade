@@ -1,0 +1,22 @@
+extends ../layout.jade
+block contenido
+    div(id="imagenes")
+        for imagen in imagenes
+            div(class="img-container")
+                a(href="/app/imagenes/#{imagen._id}")
+                    h2 #{imagen.title}
+                img(src="/public/imagenes/#{imagen._id}.#{imagen.extension}", class="main-img")
+                if(typeof imagen.creator != "undefined")
+                    p Por #{imagen.creator.email}
+    // Le pengo un tipo no valido para que no lo levante el cliente, es de uso interno de la app
+    // Implementación de Handlebars
+    script(id="image-template", type="text/x-handlebars-template")
+        div(class="img-container")
+            a(href="/app/imagenes/{{id}}")
+                h2 {{title}}
+            img(src="/public/imagenes/{{id}}.{{extension}}", class="main-img")
+
+    // Socket
+    script(src="/public/js/cliente.js")
+    // Handlebars
+    script(src="/public/js/handlebars.min-latest.js")
